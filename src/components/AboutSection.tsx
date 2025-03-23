@@ -1,5 +1,6 @@
 
 import { useEffect, useRef, useState } from "react";
+import Logo from "./Logo";
 
 const AboutSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
