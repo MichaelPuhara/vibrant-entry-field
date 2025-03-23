@@ -22,7 +22,7 @@ const Footer = () => {
           </div>
           
           <div className="mt-10 text-sm text-gray-600">
-            <p>© 2024 kahu.code. All rights reserved.</p>
+            <p>© 2025 kahu.code. All rights reserved.</p>
           </div>
         </div>
       </div>
