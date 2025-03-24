@@ -1,7 +1,6 @@
-
 import { useState, useEffect } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { Menu, X, FileText, Linkedin, Github, MessageSquare } from "lucide-react";
+import { Menu, X, MessageSquare, Linkedin } from "lucide-react";
 import Logo from "./Logo";
 
 const Navbar = () => {
@@ -28,9 +27,7 @@ const Navbar = () => {
   };
 
   const externalLinks = [
-    { name: "Portfolio", icon: FileText, href: "https://kahu.code/portfolio" },
-    { name: "LinkedIn", icon: Linkedin, href: "https://linkedin.com/in/kahucode" },
-    { name: "GitHub", icon: Github, href: "https://github.com/kahucode" },
+    { name: "LinkedIn", icon: Linkedin, href: "https://www.linkedin.com/company/kahucode/" },
   ];
 
   const toggleLanguage = () => {
