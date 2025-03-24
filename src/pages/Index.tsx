@@ -11,6 +11,7 @@ import ExampleSection from "@/components/ExampleSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import CallToAction from "@/components/CallToAction";
 import Footer from "@/components/Footer";
+import ElevenLabsWidget from "@/components/ElevenLabsWidget";
 
 const Index = () => {
   // Smooth scroll implementation
@@ -57,6 +58,9 @@ const Index = () => {
       </main>
       
       <Footer />
+      
+      {/* ElevenLabs Conversational AI Widget */}
+      <ElevenLabsWidget agentId="ia10mxkq9prAo49iFLTL" />
     </div>
   );
 };
