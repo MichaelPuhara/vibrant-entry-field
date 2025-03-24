@@ -11,24 +11,30 @@ const ElevenLabsWidget: React.FC<ElevenLabsWidgetProps> = ({ agentId }) => {
 
   useEffect(() => {
     if (widgetRef.current) {
-      // Create the element after the component mounts
-      const widgetElement = document.createElement('elevenlabs-convai');
-      widgetElement.setAttribute('agent-id', agentId);
+      // Check if element already exists
+      const existingWidget = document.querySelector('elevenlabs-convai');
       
-      // Clear any existing content
-      while (widgetRef.current.firstChild) {
-        widgetRef.current.removeChild(widgetRef.current.firstChild);
+      if (!existingWidget) {
+        // Create the element only if it doesn't already exist
+        const widgetElement = document.createElement('elevenlabs-convai');
+        widgetElement.setAttribute('agent-id', agentId);
+        
+        // Clear any existing content
+        while (widgetRef.current.firstChild) {
+          widgetRef.current.removeChild(widgetRef.current.firstChild);
+        }
+        
+        // Append the new element
+        widgetRef.current.appendChild(widgetElement);
       }
-      
-      // Append the new element
-      widgetRef.current.appendChild(widgetElement);
     }
     
     return () => {
-      // Cleanup on unmount
-      if (widgetRef.current) {
-        while (widgetRef.current.firstChild) {
-          widgetRef.current.removeChild(widgetRef.current.firstChild);
+      // Only remove on unmount if we created it
+      if (widgetRef.current && !document.body.contains(widgetRef.current)) {
+        const widget = document.querySelector('elevenlabs-convai');
+        if (widget) {
+          widget.remove();
         }
       }
     };
