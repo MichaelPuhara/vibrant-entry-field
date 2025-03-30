@@ -1,6 +1,7 @@
 
 import { useEffect, useState } from "react";
 import Logo from "./Logo";
+import { Timer, Clock } from "lucide-react";
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -23,7 +24,14 @@ const Hero = () => {
           <Logo size="lg" withHeartAnimation={true} />
         </div>
         
-        <div className="text-center mt-12 space-y-6 max-w-3xl mx-auto">
+        {/* Launching Soon Banner */}
+        <div className={`mt-6 mb-2 py-2 px-4 bg-purple-600 text-white rounded-full flex items-center gap-2 shadow-md transform transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
+          <Clock className="animate-pulse" size={18} />
+          <span className="font-medium tracking-wider">LAUNCHING SOON</span>
+          <Clock className="animate-pulse" size={18} />
+        </div>
+        
+        <div className="text-center mt-8 space-y-6 max-w-3xl mx-auto">
           <h1 
             className={`text-4xl md:text-6xl font-heading font-bold transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-10'}`}
           >
